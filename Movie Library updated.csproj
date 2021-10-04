@@ -6,4 +6,11 @@
     <RootNamespace>Movie_Library_updated</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Files\movies.csv" />
+    <EmbeddedResource Include="Files\movies.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

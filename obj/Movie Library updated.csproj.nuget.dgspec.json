@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Shcool Account\\source\\Movie Library updated\\Movie Library updated.csproj": {}
+    "C:\\Users\\Shcool Account\\RiderProjects\\Movie-Library-updated\\Movie Library updated.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Shcool Account\\source\\Movie Library updated\\Movie Library updated.csproj": {
+    "C:\\Users\\Shcool Account\\RiderProjects\\Movie-Library-updated\\Movie Library updated.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shcool Account\\source\\Movie Library updated\\Movie Library updated.csproj",
+        "projectUniqueName": "C:\\Users\\Shcool Account\\RiderProjects\\Movie-Library-updated\\Movie Library updated.csproj",
         "projectName": "Movie Library updated",
-        "projectPath": "C:\\Users\\Shcool Account\\source\\Movie Library updated\\Movie Library updated.csproj",
+        "projectPath": "C:\\Users\\Shcool Account\\RiderProjects\\Movie-Library-updated\\Movie Library updated.csproj",
         "packagesPath": "C:\\Users\\Shcool Account\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shcool Account\\source\\Movie Library updated\\obj\\",
+        "outputPath": "C:\\Users\\Shcool Account\\RiderProjects\\Movie-Library-updated\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Shcool Account\\AppData\\Roaming\\NuGet\\NuGet.Config",
