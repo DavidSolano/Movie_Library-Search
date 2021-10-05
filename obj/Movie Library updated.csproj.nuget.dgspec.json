@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Shcool Account\\RiderProjects\\Movie-Library-updated\\Movie Library updated.csproj": {}
+    "C:\\Users\\School Account\\RiderProjects\\Movie-Library-updated\\Movie Library updated.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Shcool Account\\RiderProjects\\Movie-Library-updated\\Movie Library updated.csproj": {
+    "C:\\Users\\School Account\\RiderProjects\\Movie-Library-updated\\Movie Library updated.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shcool Account\\RiderProjects\\Movie-Library-updated\\Movie Library updated.csproj",
+        "projectUniqueName": "C:\\Users\\School Account\\RiderProjects\\Movie-Library-updated\\Movie Library updated.csproj",
         "projectName": "Movie Library updated",
-        "projectPath": "C:\\Users\\Shcool Account\\RiderProjects\\Movie-Library-updated\\Movie Library updated.csproj",
-        "packagesPath": "C:\\Users\\Shcool Account\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shcool Account\\RiderProjects\\Movie-Library-updated\\obj\\",
+        "projectPath": "C:\\Users\\School Account\\RiderProjects\\Movie-Library-updated\\Movie Library updated.csproj",
+        "packagesPath": "C:\\Users\\School Account\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\School Account\\RiderProjects\\Movie-Library-updated\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Shcool Account\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\School Account\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
