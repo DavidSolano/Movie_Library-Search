@@ -10,9 +10,10 @@ namespace Movie_Library_updated
     {
         static void Main(string[] args)
         {
-            //read the file and add it to the list
-            new Movies().Read();
-            
+            //read the file
+            Movies movies = new Movies();
+            movies.Read();
+
             //display menu
         }
 
