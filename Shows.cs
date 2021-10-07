@@ -1,31 +1,35 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using CsvHelper;
+using CsvHelper.Configuration.Attributes;
 
 namespace Movie_Library_updated
 {
-    public class Shows
+    public class Shows : Media
     {
-        public List<Shows> ShowsList;
+        public List<Shows> showRecords;
         
-        public int ShowID { get; set; }
-        public string Title { get; set; }
-        public int Season { get; set; }
-        public int Episode { get; set; }
-        public string[] Writers { get; set; }
+        [Name("season")] public int Season { get; set; }
+        [Name("episode")] public int Episode { get; set; }
+        [Name("writers")] public string Writers { get; set; }
 
         public void ReadShows()
         {
-            using (var streamReader = new StreamReader(@"Files\\shows.csv"))
+            using (var streamReader = new StreamReader("Files\\shows.csv"))
             {
                 using (var csvReader = new CsvReader(streamReader, CultureInfo.InvariantCulture))
                 {
-                    csvReader.Context.RegisterClassMap<ShowsClassMap>();
-                    var ShowRecords = csvReader.GetRecords<Shows>().ToList();
+                    showRecords = csvReader.GetRecords<Shows>().ToList();
                 }
             }
+        }
+
+        public override string Display()
+        {
+            return $"{Title} {Season} {Episode} {Writers}";
         }
     }
 }

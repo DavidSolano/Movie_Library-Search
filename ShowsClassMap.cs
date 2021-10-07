@@ -6,15 +6,15 @@ namespace Movie_Library_updated
     {
         public ShowsClassMap()
         {
-            Map(m => m.ShowID).Name("showId");
+            Map(m => m.ID).Index(0).Name("showId");
 
-            Map(m => m.Title).Name("title");
+            Map(m => m.Title).Index(1).Name("title");
 
-            Map(m => m.Season).Name("season");
+            Map(m => m.Season).Index(2).Name("season");
 
-            Map(m => m.Episode).Name("episode");
+            Map(m => m.Episode).Index(3).Name("episode");
 
-            Map(m => m.Writers).Name("writers");
+            Map(m => m.Writers).Index(4).Name("writers");
         }
     }
 }

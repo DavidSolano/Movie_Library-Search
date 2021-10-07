@@ -7,11 +7,11 @@ namespace Movie_Library_updated
     {
         public MoviesClassMap()
         {
-            Map(m => m.MovieID).Name("movieId");
+            Map(m => m.ID).Index(0).Name("movieId");
 
-            Map(m => m.Title).Name("title");
+            Map(m => m.Title).Index(1).Name("title");
 
-            Map(m => m.Genre).Name("genres");
+            Map(m => m.Genre).Index(2).Name("genres");
         }
     }
 }

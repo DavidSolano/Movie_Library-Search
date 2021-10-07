@@ -17,6 +17,10 @@
     <EmbeddedResource Include="Files\videos.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <None Remove="Files\shows.csv" />
+    <EmbeddedResource Include="Files\shows.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>

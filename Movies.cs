@@ -5,19 +5,15 @@ using System.IO;
 using System.Linq;
 using CsvHelper;
 using CsvHelper.Configuration;
+using CsvHelper.Configuration.Attributes;
 
 namespace Movie_Library_updated
 {
-    public class Movies
+    public class Movies : Media
     {
         public List<Movies> MoviesList;
         
-        public int MovieID { get; set; }
-        
-        public string Title { get; set; }
-        
-        public string Genre { get; set; }
-
+        [Name("genres")] public string Genre { get; set; }
         public void Read()
         {
             using (var streamReader = new StreamReader(@"Files\\movies.csv"))
@@ -25,23 +21,32 @@ namespace Movie_Library_updated
                 using (var csvReader = new CsvReader(streamReader, CultureInfo.InvariantCulture))
                 {
                     csvReader.Context.RegisterClassMap<MoviesClassMap>();
-                    var records = csvReader.GetRecords<Movies>().ToList();
+                    MoviesList = csvReader.GetRecords<Movies>().ToList();
                 }
             }
         }
 
         public void Write()
         {
+            List<string> temp = new List<string>();
             int last = MoviesList.Count;
             Console.Write("enter movie title> ");
             string newTitle = Console.ReadLine();
             
-            Console.Write("enter movie genre> ");
-            string newGenre = Console.ReadLine();
+            Console.Write("how many genres> ");
+            int genreAmount = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < genreAmount; i++)
+            {
+                Console.WriteLine("enter the genre");
+                temp.Add(Console.ReadLine());
+            }
+
+            string newGenre = string.Join('|', temp);
+            
 
             var records = new List<Movies>
             {
-                new Movies {MovieID = last + 1, Title = newTitle, Genre = newGenre}
+                new Movies {ID = last + 1, Title = newTitle, Genre = newGenre}
             };
             
             var config = new CsvConfiguration(CultureInfo.InvariantCulture)
@@ -55,10 +60,16 @@ namespace Movie_Library_updated
                 {
                     using (var csv = new CsvWriter(writer, config))
                     {
+                        csv.Context.RegisterClassMap<MoviesClassMap>();
                         csv.WriteRecords(records);
                     }
                 }
             }
+        }
+
+        public override string Display()
+        {
+            return $"{ID} {Title} {Genre}";
         }
     }
 }

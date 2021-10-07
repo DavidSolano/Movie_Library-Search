@@ -208,3 +208,5 @@ C:\Users\School Account\RiderProjects\Movie-Library-updated\obj\Debug\net5.0\Mov
 C:\Users\School Account\RiderProjects\Movie-Library-updated\obj\Debug\net5.0\ref\Movie Library updated.dll
 C:\Users\School Account\RiderProjects\Movie-Library-updated\obj\Debug\net5.0\Movie Library updated.pdb
 C:\Users\School Account\RiderProjects\Movie-Library-updated\obj\Debug\net5.0\Movie Library updated.genruntimeconfig.cache
+C:\Users\School Account\RiderProjects\Movie-Library-updated\bin\Debug\net5.0\Files\videos.csv
+C:\Users\School Account\RiderProjects\Movie-Library-updated\bin\Debug\net5.0\Files\shows.csv

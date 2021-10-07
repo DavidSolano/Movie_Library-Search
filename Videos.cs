@@ -1,20 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using CsvHelper;
+using CsvHelper.Configuration.Attributes;
 
 namespace Movie_Library_updated
 {
-    public class Videos
+    public class Videos : Media
     {
         public List<Videos> VideosList;
         
-        public int VideoID { get; set; }
-        public string Title { get; set; }
-        public string Format { get; set; }
-        public int Length { get; set; }
-        public int[] Regions { get; set; }
+        [Name("videoFormat")] public string Format { get; set; }
+        [Name("length")] public int Length { get; set; }
+        [Name("regions")] public int Regions { get; set; }
 
         public void ReadVideos()
         {
@@ -22,10 +22,14 @@ namespace Movie_Library_updated
             {
                 using (var csvReader = new CsvReader(streamReader, CultureInfo.InvariantCulture))
                 {
-                    csvReader.Context.RegisterClassMap<VideosClassMap>();
-                    var records = csvReader.GetRecords<Videos>().ToList();
+                    VideosList = csvReader.GetRecords<Videos>().ToList();
                 }
             }
+        }
+
+        public override string Display()
+        {
+            return $"{ID} {Title} {Format} {Length} {Regions}";
         }
     }
 }
