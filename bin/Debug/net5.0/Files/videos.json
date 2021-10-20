@@ -1,0 +1,16 @@
+[
+  {
+    "Format": "VHS, DVD, BluRay",
+    "Length": 95,
+    "Regions": "4,6,7,9",
+    "ID": 1,
+    "Title": "Lethal Weapon"
+  },
+  {
+    "Format": "VHS, DVD, BluRay",
+    "Length": 100,
+    "Regions": "0,3,4",
+    "ID": 2,
+    "Title": "Lethal Weapon 2"
+  }
+]
