@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Zrpns/O0xhOLLqEc7bg5zsNqcfjw3NCdNT9bILMzyN0m0v/Jw9VzXFUbl0+U8dCGceSvPUjk0VD7t9IX9FumDw==",
+  "dgSpecHash": "A20/EiSki7fSI5odAlE7poSxcQRrMF9fF7Yt8AFySFCVEFYwgcSiD2lj+Hd3UGlXm2w1hR+KpRV7e/IUo0fjvA==",
   "success": true,
   "projectFilePath": "C:\\Users\\School Account\\RiderProjects\\Movie-Library-updated\\Movie Library updated.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\School Account\\.nuget\\packages\\csvhelper\\27.1.1\\csvhelper.27.1.1.nupkg.sha512",
+    "C:\\Users\\School Account\\.nuget\\packages\\json.net\\1.0.33\\json.net.1.0.33.nupkg.sha512",
     "C:\\Users\\School Account\\.nuget\\packages\\microsoft.codecoverage\\16.11.0\\microsoft.codecoverage.16.11.0.nupkg.sha512",
     "C:\\Users\\School Account\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\School Account\\.nuget\\packages\\microsoft.net.test.sdk\\16.11.0\\microsoft.net.test.sdk.16.11.0.nupkg.sha512",

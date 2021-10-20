@@ -11,6 +11,15 @@
           "lib/net5.0/CsvHelper.dll": {}
         }
       },
+      "Json.Net/1.0.33": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Json.Net.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Json.Net.dll": {}
+        }
+      },
       "Microsoft.CodeCoverage/16.11.0": {
         "type": "package",
         "compile": {
@@ -1731,6 +1740,18 @@
         "lib/netstandard2.0/CsvHelper.xml",
         "lib/netstandard2.1/CsvHelper.dll",
         "lib/netstandard2.1/CsvHelper.xml"
+      ]
+    },
+    "Json.Net/1.0.33": {
+      "sha512": "5tE+db6BqhRAvITIVBeRsQorLGshPExfm4FmMRvWWAfs4RxeTbFFj2PIEybwmMW0qR30HKkXDYhq0YkDK2Jtxw==",
+      "type": "package",
+      "path": "json.net/1.0.33",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "json.net.1.0.33.nupkg.sha512",
+        "json.net.nuspec",
+        "lib/netstandard2.0/Json.Net.dll"
       ]
     },
     "Microsoft.CodeCoverage/16.11.0": {
@@ -6036,6 +6057,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "CsvHelper >= 27.1.1",
+      "Json.Net >= 1.0.33",
       "Microsoft.NET.Test.Sdk >= 16.11.0",
       "NLog >= 4.7.11",
       "NLog.Config >= 4.7.11",
@@ -6085,6 +6107,10 @@
           "CsvHelper": {
             "target": "Package",
             "version": "[27.1.1, )"
+          },
+          "Json.Net": {
+            "target": "Package",
+            "version": "[1.0.33, )"
           },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",

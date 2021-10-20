@@ -5,6 +5,7 @@ using System.IO;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Newtonsoft.Json;
 
 namespace Movie_Library_updated
 {
@@ -15,10 +16,18 @@ namespace Movie_Library_updated
             var logger = NLog.LogManager.GetCurrentClassLogger();
             string answer;
             int choice;
+
+            IFileHelper fileHelper = new CsvOrganizer();
             
-            //read the file
-            Movies movies = new Movies();
-            movies.Read();
+            fileHelper.ReadVideo();
+
+            JSONOrganizer jsonHelper = new JSONOrganizer();
+            //copy list to another list
+            
+
+            jsonHelper.VideosList = (fileHelper as CsvOrganizer).VideosList;
+            jsonHelper.AddVideo();
+
 
             do
             {
@@ -32,7 +41,7 @@ namespace Movie_Library_updated
                         Console.Write("how many movies would you like to see> ");
                         int view = Convert.ToInt32(Console.ReadLine());
 
-                        foreach (Movies movie in movies.MoviesList.GetRange(0, view))
+                        foreach (Movies movie in (fileHelper as JSONOrganizer).MoviesList.GetRange(0, view))
                         {
                             Console.WriteLine(movie.Display());
                         }
@@ -47,7 +56,7 @@ namespace Movie_Library_updated
                     try
                     {
                         //asked if it was bad practice to put io in a class method
-                        movies.Write();
+                        fileHelper.AddMovie();
                     }
                     catch (ExternalException ee)
                     {
@@ -56,21 +65,26 @@ namespace Movie_Library_updated
                     }
                 }else if (choice == 3)
                 {
-                    Shows shows = new Shows();
+                    /*Shows shows = new Shows();
                     shows.ReadShows();
                     for (int i = 0; i < shows.showRecords.Count; i++)
                     {
                         Console.WriteLine(shows.showRecords[i].Display());
                     }
                     
+                    shows.SerealizeShows();
+                    shows.DeSerealizeShows();*/
+
                 }else if (choice == 4)
                 {
-                    Videos videos = new Videos();
+                    /*Videos videos = new Videos();
                     videos.ReadVideos();
                     for (int i = 0; i < videos.VideosList.Count; i++)
                     {
                         Console.WriteLine(videos.VideosList[i].Display());
-                    }
+                    }*/
+                    
+                    
                 }
                 
                 Console.WriteLine("would you like to go again? (y/n)");
