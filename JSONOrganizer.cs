@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
@@ -17,9 +18,11 @@ namespace Movie_Library_updated
             VideosList = JsonConvert.DeserializeObject<List<Videos>>(text);
         }
 
+        //reading is the deserializing
         public void ReadShow()
         {
-            //deserealize
+            string text = File.ReadAllText(@"Files\\shows.json");
+            ShowRecords = JsonConvert.DeserializeObject<List<Shows>>(text);
         }
 
         public void ReadMovie()
@@ -34,6 +37,7 @@ namespace Movie_Library_updated
             VideosList = JsonConvert.DeserializeObject<List<Videos>>(text);
         }
 
+        //adding is the same is serializing
         public void AddMovie()
         {
             string data;

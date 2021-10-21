@@ -13,8 +13,8 @@ namespace Movie_Library_updated
     public class CsvOrganizer : IFileHelper
     {
         public List<Movies> MoviesList = new List<Movies>();
-        public List<Shows> ShowRecords;
-        public List<Videos> VideosList;
+        public List<Shows> ShowRecords = new List<Shows>();
+        public List<Videos> VideosList = new List<Videos>();
 
         public void ReadShow()
         {
@@ -27,9 +27,9 @@ namespace Movie_Library_updated
                 }
             }
 
-            foreach (var shows in ShowRecords)
+            foreach (var show in ShowRecords)
             {
-                Console.WriteLine(shows.Display());
+                Console.WriteLine(show.Display());
             }
         }
 
@@ -43,13 +43,8 @@ namespace Movie_Library_updated
                     MoviesList = csvReader.GetRecords<Movies>().ToList();
                 }
             }
-
-            foreach (var movie in MoviesList)
-            {
-                Console.WriteLine(movie.Display());
-            }
         }
-
+        
         public void ReadVideo()
         {
             using (var streamReader = new StreamReader(@"Files\\videos.csv"))
@@ -60,12 +55,12 @@ namespace Movie_Library_updated
                 }
             }
 
-            foreach (var videos in VideosList)
+            foreach (var video in VideosList)
             {
-                Console.WriteLine(videos.Display());
+                Console.WriteLine(video.Display());
             }
         }
-
+        
         public void AddMovie()
         {
             //updates the list
@@ -117,11 +112,15 @@ namespace Movie_Library_updated
             }
         }
 
+        // doesn't actually add show
+        // I just needed it for the serealization
         public void AddShow()
         {
             throw new NotImplementedException();
         }
-
+        
+        // doesn't actually add videos
+        // I just needed it for the serealization
         public void AddVideo()
         {
             throw new NotImplementedException();

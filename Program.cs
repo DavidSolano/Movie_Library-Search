@@ -13,22 +13,23 @@ namespace Movie_Library_updated
     {
         static void Main(string[] args)
         {
-            var logger = NLog.LogManager.GetCurrentClassLogger();
+            /*just wanted to say really quickly that
+            Justin helped me with this assignment (part of the assignment?)
+            (he helped me piece things together. dont quite know the correct verbiage) 
+            in case the code looked familiar*/
+
             string answer;
             int choice;
+            
+            var logger = NLog.LogManager.GetCurrentClassLogger();
 
+            // used to populate the csv list first to then 
+            // be able to send it to json organizer
             IFileHelper fileHelper = new CsvOrganizer();
-            
-            fileHelper.ReadVideo();
 
+            //used to copy one list to the other
             JSONOrganizer jsonHelper = new JSONOrganizer();
-            //copy list to another list
             
-
-            jsonHelper.VideosList = (fileHelper as CsvOrganizer).VideosList;
-            jsonHelper.AddVideo();
-
-
             do
             {
                 menu();
@@ -40,8 +41,16 @@ namespace Movie_Library_updated
                     {
                         Console.Write("how many movies would you like to see> ");
                         int view = Convert.ToInt32(Console.ReadLine());
+                        
+                        // reads csv movies list
+                        fileHelper.ReadMovie();
+                        
+                        // copies csv list to json list
+                        jsonHelper.MoviesList = (fileHelper as CsvOrganizer).MoviesList;
+                        jsonHelper.AddShow();
 
-                        foreach (Movies movie in (fileHelper as JSONOrganizer).MoviesList.GetRange(0, view))
+                        // gets however many movies you want
+                        foreach (var movie in jsonHelper.MoviesList.GetRange(0, view))
                         {
                             Console.WriteLine(movie.Display());
                         }
@@ -55,7 +64,7 @@ namespace Movie_Library_updated
                 {
                     try
                     {
-                        //asked if it was bad practice to put io in a class method
+                        // adds the movie
                         fileHelper.AddMovie();
                     }
                     catch (ExternalException ee)
@@ -65,26 +74,46 @@ namespace Movie_Library_updated
                     }
                 }else if (choice == 3)
                 {
-                    /*Shows shows = new Shows();
-                    shows.ReadShows();
-                    for (int i = 0; i < shows.showRecords.Count; i++)
+                    try
                     {
-                        Console.WriteLine(shows.showRecords[i].Display());
-                    }
+                        Shows shows = new Shows();
                     
-                    shows.SerealizeShows();
-                    shows.DeSerealizeShows();*/
-
+                        // reads shows
+                        fileHelper.ReadShow();
+                    
+                        // adds the shows to .json file
+                        jsonHelper.ShowRecords = (fileHelper as CsvOrganizer).ShowRecords;
+                        jsonHelper.AddShow();
+                    
+                        // displays shows
+                        shows.Display();
+                    }
+                    catch (ExternalException e)
+                    {
+                        logger.Error($"{e} somewhere between copying lists or reading shows went wonky");
+                        throw;
+                    }
                 }else if (choice == 4)
                 {
-                    /*Videos videos = new Videos();
-                    videos.ReadVideos();
-                    for (int i = 0; i < videos.VideosList.Count; i++)
+                    try
                     {
-                        Console.WriteLine(videos.VideosList[i].Display());
-                    }*/
+                        Videos videos = new Videos();
                     
+                        // reads videos in csv
+                        fileHelper.ReadVideo();
                     
+                        // adds the videos to .json file
+                        jsonHelper.VideosList = (fileHelper as CsvOrganizer).VideosList;
+                        jsonHelper.AddVideo();
+                    
+                        // displays videos
+                        videos.Display();
+                    }
+                    catch (ExternalException e)
+                    {
+                        logger.Error($"{e} somewhere between copying lists or reading videos went wonky");
+                        throw;
+                    }
                 }
                 
                 Console.WriteLine("would you like to go again? (y/n)");
