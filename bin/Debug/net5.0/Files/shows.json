@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "Season": 5,
+    "Episode": 10,
+    "Writers": "Dan Goor | Michael Schur | Phil Augusta Jackson | Luke Del Tredici",
+    "ID": 1,
+    "Title": "Brooklyn Nine-Nine"
+  },
+  {
+    "Season": 4,
+    "Episode": 6,
+    "Writers": "David Beinoff | D. B. Weiss | George R. R. Martin | Bryan Cogman | Vanessa Taylor | Jane Espenson | Dave Hill",
+    "ID": 2,
+    "Title": "Game of Thrones"
+  }
+]

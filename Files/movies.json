@@ -1,2 +1,62 @@
-﻿{
-}
+﻿[
+  {
+    "Genre": "Documentary",
+    "ID": 161336,
+    "Title": "Author: The JT LeRoy Story (2016)"
+  },
+  {
+    "Genre": "Crime|Drama",
+    "ID": 161582,
+    "Title": "Hell or High Water (2016)"
+  },
+  {
+    "Genre": "Action|Adventure|Animation|Drama|Fantasy|Sci-Fi",
+    "ID": 161594,
+    "Title": "Kingsglaive: Final Fantasy XV (2016)"
+  },
+  {
+    "Genre": "Drama|Horror|Thriller",
+    "ID": 161830,
+    "Title": "Body (2015)"
+  },
+  {
+    "Genre": "Action|Adventure|Horror|Sci-Fi",
+    "ID": 161918,
+    "Title": "Sharknado 4: The 4th Awakens (2016)"
+  },
+  {
+    "Genre": "Drama",
+    "ID": 161944,
+    "Title": "The Last Brickmaker in America (2001)"
+  },
+  {
+    "Genre": "Drama",
+    "ID": 162376,
+    "Title": "Stranger Things"
+  },
+  {
+    "Genre": "Romance|Thriller",
+    "ID": 162542,
+    "Title": "Rustom (2016)"
+  },
+  {
+    "Genre": "Adventure|Drama|Romance",
+    "ID": 162672,
+    "Title": "Mohenjo Daro (2016)"
+  },
+  {
+    "Genre": "Action|Adventure|Fantasy|Sci-Fi",
+    "ID": 163056,
+    "Title": "Shin Godzilla (2016)"
+  },
+  {
+    "Genre": "Documentary",
+    "ID": 163949,
+    "Title": "The Beatles: Eight Days a Week - The Touring Years (2016)"
+  },
+  {
+    "Genre": "Comedy",
+    "ID": 164977,
+    "Title": "The Gay Desperado (1936)"
+  }
+]
