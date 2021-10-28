@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Threading.Channels;
 using Newtonsoft.Json;
 
 namespace Movie_Library_updated
@@ -57,6 +59,26 @@ namespace Movie_Library_updated
             string data;
             data = JsonConvert.SerializeObject(VideosList, Formatting.Indented);
             File.WriteAllText(@"Files\\videos.json", data);
+        }
+
+        public void Search()
+        {
+            Console.WriteLine("enter the title");
+            string title = Console.ReadLine().ToLower();
+
+            var movies = MoviesList.Where(x => x.Title.ToLower().Contains(title)).ToList();
+            movies.ForEach(l => Console.WriteLine(l.Display()));
+
+
+
+
+            var shows = ShowRecords.Where(y => y.Title.ToLower().Contains(title)).ToList();
+            shows.ForEach(n => Console.WriteLine(n.Display()));
+            
+
+
+            var videos = VideosList.Where(z => z.Title.ToLower().Contains(title)).ToList();
+            videos.ForEach(h => Console.WriteLine(h.Display()));
         }
     }
 }

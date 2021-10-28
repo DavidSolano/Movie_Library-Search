@@ -26,11 +26,6 @@ namespace Movie_Library_updated
                     ShowRecords = csvReader.GetRecords<Shows>().ToList();
                 }
             }
-
-            foreach (var show in ShowRecords)
-            {
-                Console.WriteLine(show.Display());
-            }
         }
 
         public void ReadMovie()
@@ -53,11 +48,6 @@ namespace Movie_Library_updated
                 {
                     VideosList = csvReader.GetRecords<Videos>().ToList();
                 }
-            }
-
-            foreach (var video in VideosList)
-            {
-                Console.WriteLine(video.Display());
             }
         }
         

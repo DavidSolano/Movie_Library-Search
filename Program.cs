@@ -47,7 +47,7 @@ namespace Movie_Library_updated
                         
                         // copies csv list to json list
                         jsonHelper.MoviesList = (fileHelper as CsvOrganizer).MoviesList;
-                        jsonHelper.AddShow();
+                        jsonHelper.AddMovie();
 
                         // gets however many movies you want
                         foreach (var movie in jsonHelper.MoviesList.GetRange(0, view))
@@ -86,7 +86,10 @@ namespace Movie_Library_updated
                         jsonHelper.AddShow();
                     
                         // displays shows
-                        shows.Display();
+                        foreach (var show in jsonHelper.ShowRecords)
+                        {
+                            Console.WriteLine(show.Display());
+                        }
                     }
                     catch (ExternalException e)
                     {
@@ -107,15 +110,44 @@ namespace Movie_Library_updated
                         jsonHelper.AddVideo();
                     
                         // displays videos
-                        videos.Display();
+                        foreach (var video in jsonHelper.VideosList)
+                        {
+                            Console.WriteLine(video.Display());
+                        }
                     }
                     catch (ExternalException e)
                     {
                         logger.Error($"{e} somewhere between copying lists or reading videos went wonky");
                         throw;
                     }
+                }else if (choice == 5)
+                {
+                    try
+                    {
+                        // reads csv movies list
+                        fileHelper.ReadMovie();
+                        fileHelper.ReadShow();
+                        fileHelper.ReadVideo();
+
+                        // copies csv list to json list
+                        jsonHelper.MoviesList = (fileHelper as CsvOrganizer).MoviesList;
+                        jsonHelper.AddMovie();
+
+                        jsonHelper.ShowRecords = (fileHelper as CsvOrganizer).ShowRecords;
+                        jsonHelper.AddShow();
+                        
+                        jsonHelper.VideosList = (fileHelper as CsvOrganizer).VideosList;
+                        jsonHelper.AddVideo();
+                        
+                        jsonHelper.Search();
+                    }
+                    catch (ExternalException e)
+                    {
+                        logger.Error($"{e} search failed.");
+                        throw;
+                    }
                 }
-                
+
                 Console.WriteLine("would you like to go again? (y/n)");
                 answer = Console.ReadLine().ToLower();
 
@@ -131,6 +163,7 @@ namespace Movie_Library_updated
             Console.WriteLine("2. add a movie?");
             Console.WriteLine("3. display shows?");
             Console.WriteLine("4. display videos?");
+            Console.WriteLine("5. search");
             Console.Write(">");
         }
     }
